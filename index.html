@@ -1,1 +1,101 @@
 
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>Fouad EduLab - المختبر الافتراضي</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+  <h1>🧪 Fouad EduLab</h1>
+  <p>مختبر افتراضي لاستكشاف خصائص المواد الأيونية والتساهمية والفلزية</p>
+</header>
+
+<section class="safety">
+  ⚠️ تعليمات السلامة الافتراضية:
+  لا تلمس الأجهزة في الواقع - هذا مختبر محاكاة فقط.
+</section>
+
+<nav>
+  <button onclick="showLab('melting')">اختبار الانصهار</button>
+  <button onclick="showLab('conduct')">اختبار التوصيل</button>
+  <button onclick="showLab('molten')">التوصيل عند الصهر</button>
+</nav>
+
+<!-- 🧪 LAB 1 -->
+<div id="melting" class="lab">
+
+  <h2>🔥 محاكاة درجة الانصهار</h2>
+
+  <select id="meltingMaterial">
+    <option value="NaCl">كلوريد الصوديوم (أيوني)</option>
+    <option value="CaCl2">كلوريد الكالسيوم (أيوني)</option>
+    <option value="wax">الشمع (تساهمي)</option>
+    <option value="al">الألومنيوم (فلزي)</option>
+    <option value="cu">النحاس (فلزي)</option>
+  </select>
+
+  <button onclick="testMelting()">تسخين المادة</button>
+
+  <p id="meltingResult"></p>
+
+  <table>
+    <tr><th>المادة</th><th>الملاحظة</th></tr>
+    <tbody id="meltingTable"></tbody>
+  </table>
+</div>
+
+<!-- ⚡ LAB 2 -->
+<div id="conduct" class="lab hidden">
+
+  <h2>⚡ اختبار التوصيل الكهربائي</h2>
+
+  <select id="conductMaterial">
+    <option value="NaCl_solid">NaCl (صلب)</option>
+    <option value="NaCl_solution">NaCl (محلول)</option>
+    <option value="wax">الشمع</option>
+    <option value="water">الماء</option>
+    <option value="al">الألومنيوم</option>
+    <option value="cu">النحاس</option>
+  </select>
+
+  <button onclick="testConduct()">اختبار التوصيل</button>
+
+  <p id="conductResult"></p>
+
+  <table>
+    <tr><th>المادة</th><th>النتيجة</th></tr>
+    <tbody id="conductTable"></tbody>
+  </table>
+</div>
+
+<!-- 🔥 LAB 3 -->
+<div id="molten" class="lab hidden">
+
+  <h2>🔥⚡ التوصيل عند الصهر (المركبات الأيونية)</h2>
+
+  <select id="moltenMaterial">
+    <option value="NaCl">NaCl منصهر</option>
+    <option value="CaCl2">CaCl2 منصهر</option>
+  </select>
+
+  <button onclick="testMolten()">اختبار الحالة المنصهرة</button>
+
+  <p id="moltenResult"></p>
+
+  <table>
+    <tr><th>المادة</th><th>السلوك</th></tr>
+    <tbody id="moltenTable"></tbody>
+  </table>
+</div>
+
+<footer>
+  © Fouad EduLab - مختبر العلوم التفاعلي
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
